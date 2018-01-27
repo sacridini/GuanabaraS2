@@ -2,7 +2,6 @@ var geet = require('users/elacerda/geet:geet');
 var rio_2016 = ee.Image('COPERNICUS/S2/20161110T130242_20161110T165117_T23KPQ');
 var rio_2016_ndvi = geet.ndviS2(rio_2016);
 var newfc = urbano.merge(floresta).merge(agua).merge(pasto);
-var bands_idx = ['B2', 'B3', 'B4', 'B8','NDVI'];
 var cart_class = geet.cart(rio_2016_ndvi, newfc, 'cobertura');
 
 var COLOR = {
